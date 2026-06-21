@@ -86,7 +86,7 @@ bitfield! {
     pub _, gate_driver_consumer: 3;
     /// **GDP**
     /// - 1: Switch load closed
-    /// - 1: Switch load opened
+    /// - 0: Switch load opened
     pub _, gate_driver_provider: 2;
     /// **VCONN** (V2, V1)
     /// - 0b00: (Open, Open)

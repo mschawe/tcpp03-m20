@@ -11,23 +11,23 @@ pub use register::*;
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
 pub enum Error<I2CE, GPIOE> {
     Device(i2c::DeviceError<I2CE, GPIOE>),
-    InvalidConfig,
+    InvalidCommand,
 }
 
 #[derive(Debug, Clone, Copy, Default, PartialEq)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum PowerRole {
+pub enum PdRole {
     #[default]
+    None,
     Sink,
     Source,
-    None,
 }
 
 #[derive(Debug, Clone, Copy, Default, PartialEq)]
 #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-pub enum CcConfig {
+pub enum CcState {
     #[default]
+    None,
     CC1,
     CC2,
-    None,
 }
