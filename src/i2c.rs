@@ -2,7 +2,6 @@
 use embedded_hal::digital::InputPin;
 use embedded_hal::digital::OutputPin;
 use embedded_hal_async::delay::DelayNs;
-use embedded_hal_async::digital::Wait;
 use embedded_hal_async::i2c::I2c;
 
 use crate::register::ReadReg;
@@ -38,6 +37,8 @@ where
 {
     i2c: I2C,
     enable: GPO,
+    #[allow(unused)]
+    /// TODO: Interrupt based off of flgn edge for device recovery
     flgn: GPI,
     delay: DELAY,
     addr: u8,
@@ -68,6 +69,7 @@ where
         self.enable.set_low().map_err(DeviceError::Gpio)
     }
 
+    #[allow(unused)]
     pub fn flgn(&mut self) -> DeviceResult<bool, I2CE, GPIOE> {
         self.flgn.is_high().map_err(DeviceError::Gpio)
     }
