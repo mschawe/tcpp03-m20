@@ -53,7 +53,8 @@ struct State {
     mode: Mode,
     pd: PdRole,
     cc: CcState,
-    vconn_drive: bool,
+    #[allow(unused)]
+    vconn_drive: bool, // TODO: Vconn drive setting/unsetting
 }
 
 #[derive(Debug)]
