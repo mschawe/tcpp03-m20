@@ -3,6 +3,7 @@ name = "tcpp03-m20"
 version = "0.1.0"
 edition = "2024"
 license = "MIT"
+description = "Driver for the TCPP03-M20 USB-C power delivery controller"
 
 [dependencies]
 bitfield = "0.19.4"
