@@ -1,6 +1,8 @@
 //! TCPP03-M20 USB-C PD Dual Role Gate Controller Driver
 #![no_std]
 
+// FIXME: log module to wrap defmt or no-defmt
+
 pub mod control;
 pub use control::Device;
 pub mod error;
