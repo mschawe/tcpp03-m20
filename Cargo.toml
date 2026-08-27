@@ -4,6 +4,10 @@ version = "0.2.0"
 edition = "2024"
 license = "MIT"
 description = "Driver for the TCPP03-M20 USB-C power delivery controller"
+repository = "https://github.com/mschawe/tcpp03-m20"
+authors = ["Matthew Schawe <matt.schawe@gmail.com>"]
+keywords = ["usb", "usbpd", "usb-cc", "device-driver", "drp"]
+categories = ["embedded", "no-std"]
 
 [dependencies]
 bitfield = "0.19.5"
