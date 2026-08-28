@@ -190,7 +190,9 @@ where
     }
 
     /// Set controller consumer and provider gates to adhere to `pd`
-    async fn set_pd(&mut self, pd: PdRole) -> DeviceResult<(), I2CError> {
+    /// 
+    /// Only works while attached
+    pub async fn set_pd(&mut self, pd: PdRole) -> DeviceResult<(), I2CError> {
         if self.state.mode != PowerMode::Normal {
             return Err(Error::InvalidCommand);
         }
